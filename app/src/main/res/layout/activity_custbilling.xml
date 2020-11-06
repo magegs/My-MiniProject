@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="375dp"
+    android:layout_height="120dp"
+    android:layout_marginTop="15dp"
+    android:layout_marginLeft="15dp"
+    app:cardCornerRadius="4dp"
+    tools:context=".Custbilling">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/order_productimage"
+            android:layout_width="125dp"
+            android:layout_height="120dp"
+            android:scaleType="centerCrop"
+            android:background="@drawable/carrot"/>
+    <RelativeLayout
+        android:layout_width="250dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_alignParentEnd="true">
+        <TextView
+            android:id="@+id/bill_proname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginLeft="8dp"
+            android:text="Carrot Early Nantus - Desi Vegetable Seeds"
+            android:layout_marginTop="5dp"
+            android:textColor="#000"
+            />
+
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:id="@+id/bill_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bill_proname"
+            android:layout_marginLeft="8dp"
+            android:text="Delivered 02-Oct-2020"
+            android:textColor="#000"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:drawableRight="@drawable/arrow"
+            android:id="@+id/bill_download"
+            android:text="Download Invoice"
+            android:textAlignment="textStart"
+            android:padding="8dp"
+            android:layout_height="wrap_content"
+            android:background="#f2f2f2"
+            android:textColor="#000"
+            android:layout_alignParentBottom="true"/>
+    </RelativeLayout>
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

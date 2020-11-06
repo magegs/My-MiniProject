@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="Report.User_Report">
+    <EditText
+        android:id="@+id/search_userid"
+        android:layout_width = "match_parent"
+        android:layout_height = "wrap_content"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:drawableRight="@drawable/search2"
+        android:hint="Type User Id"
+        android:padding="15dp"
+        android:background="#e6e6e6"
+        android:layout_marginTop = "15dp"
+
+        android:focusable = "true"
+        android:layout_alignParentLeft = "true"
+        android:layout_alignParentStart = "true"
+        android:layout_alignParentRight = "true"
+        android:layout_alignParentEnd = "true"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycle_userreport"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/search_userid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+</RelativeLayout>

@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+    tools:context=".Add_Product">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAlignment="center"
+            android:text="Add_Product"
+            android:textStyle="bold"
+            android:textColor="#ffff"
+            android:background="@color/colorPrimaryDark"
+            android:textSize="24dp"
+
+            />
+
+        <RelativeLayout
+            android:layout_marginTop="32dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+    <ImageView
+        android:id="@+id/addproimage"
+        android:layout_width="250dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:cropToPadding="false"
+        android:scaleType="centerCrop"
+        android:src="@drawable/addimage"
+       />
+        </RelativeLayout>
+
+        <EditText
+            android:layout_width = "match_parent"
+            android:layout_height = "wrap_content"
+            android:layout_marginRight="25dp"
+            android:layout_marginLeft="25dp"
+            android:id="@+id/edtitext_product_name"
+            android:hint="Product_Name"
+            android:padding="15dp"
+            android:background="#e6e6e6"
+            android:layout_marginTop = "15dp"
+
+            android:focusable = "true"
+            android:layout_alignParentLeft = "true"
+            android:layout_alignParentStart = "true"
+            android:layout_alignParentRight = "true"
+            android:layout_alignParentEnd = "true"/>
+
+        <EditText
+            android:layout_width = "match_parent"
+            android:layout_height = "wrap_content"
+            android:layout_marginRight="25dp"
+            android:layout_marginLeft="25dp"
+            android:id="@+id/edtitext_product_price"
+            android:hint="Product_Price"
+            android:padding="15dp"
+            android:background="#e6e6e6"
+            android:layout_marginTop = "15dp"
+
+            android:focusable = "true"
+            android:layout_alignParentLeft = "true"
+            android:layout_alignParentStart = "true"
+            android:layout_alignParentRight = "true"
+            android:layout_alignParentEnd = "true"/>
+
+        <Spinner
+            android:id="@+id/spinner_dropdown"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:background="#e6e6e6"
+            android:layout_marginRight="25dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop = "15dp"
+            android:layout_alignParentLeft = "true"
+            android:layout_alignParentStart = "true"
+            android:layout_alignParentRight = "true"
+            android:layout_alignParentEnd = "true"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="25dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="15dp"
+            android:text="Product_Description"
+            android:background="#e6e6e6"
+            android:textSize="24dp"
+            android:layout_alignParentLeft = "true"
+            android:layout_alignParentStart = "true"
+            android:layout_alignParentRight = "true"
+            android:layout_alignParentEnd = "true"
+            />
+        <EditText
+            android:layout_width = "match_parent"
+            android:layout_height = "wrap_content"
+            android:layout_marginRight="25dp"
+            android:layout_marginLeft="25dp"
+            android:id="@+id/edtitext_product_description"
+
+            android:padding="50dp"
+            android:background="#e6e6e6"
+
+
+            android:focusable = "true"
+            android:layout_alignParentLeft = "true"
+            android:layout_alignParentStart = "true"
+            android:layout_alignParentRight = "true"
+            android:layout_alignParentEnd = "true"/>
+        <EditText
+            android:layout_width = "match_parent"
+            android:layout_height = "wrap_content"
+            android:layout_marginRight="25dp"
+            android:layout_marginLeft="25dp"
+            android:id="@+id/edtitext_product_spec1"
+            android:hint="Seeds_per_packet"
+            android:padding="15dp"
+            android:background="#e6e6e6"
+            android:layout_marginTop = "15dp"
+
+            android:focusable = "true"
+            android:layout_alignParentLeft = "true"
+            android:layout_alignParentStart = "true"
+            android:layout_alignParentRight = "true"
+            android:layout_alignParentEnd = "true"/>
+        <EditText
+            android:layout_width = "match_parent"
+            android:layout_height = "wrap_content"
+            android:layout_marginRight="25dp"
+            android:layout_marginLeft="25dp"
+            android:id="@+id/edtitext_product_spec2"
+            android:hint="Common Name"
+            android:padding="15dp"
+            android:background="#e6e6e6"
+            android:layout_marginTop = "15dp"
+
+            android:focusable = "true"
+            android:layout_alignParentLeft = "true"
+            android:layout_alignParentStart = "true"
+            android:layout_alignParentRight = "true"
+            android:layout_alignParentEnd = "true"/>
+
+        <EditText
+            android:layout_width = "match_parent"
+            android:layout_height = "wrap_content"
+            android:layout_marginRight="25dp"
+            android:layout_marginLeft="25dp"
+            android:id="@+id/edtitext_product_spec3"
+            android:hint="Bloom Time"
+            android:padding="15dp"
+            android:background="#e6e6e6"
+            android:layout_marginTop = "15dp"
+
+            android:focusable = "true"
+            android:layout_alignParentLeft = "true"
+            android:layout_alignParentStart = "true"
+            android:layout_alignParentRight = "true"
+            android:layout_alignParentEnd = "true"/>
+        <EditText
+            android:layout_width = "match_parent"
+            android:layout_height = "wrap_content"
+            android:layout_marginRight="25dp"
+            android:layout_marginLeft="25dp"
+            android:id="@+id/edtitext_product_spec4"
+            android:hint="Flower Colour"
+            android:padding="15dp"
+            android:background="#e6e6e6"
+            android:layout_marginTop = "15dp"
+
+            android:focusable = "true"
+            android:layout_alignParentLeft = "true"
+            android:layout_alignParentStart = "true"
+            android:layout_alignParentRight = "true"
+            android:layout_alignParentEnd = "true"/>
+
+
+        <Button
+            android:id="@+id/btn_addpro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Product"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginLeft="25dp"
+            android:textColor="#ffff"
+            android:background="#ff3333"
+            />
+
+
+
+
+
+    </LinearLayout>
+
+</ScrollView>
