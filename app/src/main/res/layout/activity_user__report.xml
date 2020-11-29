@@ -16,13 +16,14 @@
         android:padding="15dp"
         android:background="#e6e6e6"
         android:layout_marginTop = "15dp"
-
+        android:inputType="number"
         android:focusable = "true"
         android:layout_alignParentLeft = "true"
         android:layout_alignParentStart = "true"
         android:layout_alignParentRight = "true"
         android:layout_alignParentEnd = "true"/>
     <androidx.recyclerview.widget.RecyclerView
+        android:background="#f5f5f0"
         android:id="@+id/recycle_userreport"
         android:layout_marginTop="15dp"
         android:layout_below="@+id/search_userid"

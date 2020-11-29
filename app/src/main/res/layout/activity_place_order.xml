@@ -1,9 +1,260 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PlaceOrder">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/placedorderrecycle"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+      />
+        <Button
+            android:id="@+id/ordercancel"
+            android:layout_width="match_parent"
+            android:background="#ff4d4d"
+            android:layout_marginTop="10dp"
+            android:text="Cancel Order"
+            android:textSize="18dp"
+            android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/placedorderrecycle"/>
+
+
+    <TextView
+        android:id="@+id/text3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ordercancel"
+        android:layout_marginTop="15dp"
+        android:text="Shipping Address"
+        android:textColor="#000"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:textSize="20dp"
+        android:textStyle="bold"/>
+    <TableLayout
+        android:id="@+id/tracktable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text3"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/border">
+        <TableRow>
+
+            <TextView
+                android:id="@+id/shipping_name"
+                android:text="Magendran"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="3dp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1" />
+
+
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:id="@+id/shipping_addr1"
+                android:text="No 3/1 SV flat 2nd floor "
+                android:layout_marginLeft="5dp"
+                android:textColor="#000000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1" />
+
+
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:id="@+id/shipping_addr2"
+                android:text="Raja Gardern Paper Mills road,Peravallur,chennai-82"
+                android:layout_marginLeft="5dp"
+                android:textColor="#000000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1" />
+
+
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:id="@+id/shipping_state"
+                android:text="TAMIL NADU"
+                android:layout_marginLeft="5dp"
+                android:textColor="#000000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1" />
+
+
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:id="@+id/shipp_pincode"
+                android:text="600082"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="3dp"
+                android:textColor="#000000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1" />
+
+
+        </TableRow>
+
+    </TableLayout>
+    <TextView
+        android:id="@+id/text4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tracktable"
+        android:layout_marginTop="15dp"
+        android:text="Billing Details"
+        android:textColor="#000"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:textSize="20dp"
+        android:textStyle="bold"/>
+
+    <TableLayout
+        android:id="@+id/tracktable2"
+        android:layout_below="@+id/text4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/border">
+        <TableRow>
+
+            <TextView
+                android:text="Items:"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="3dp"
+                android:textColor="#000000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1" />
+            <TextView
+                android:id="@+id/ship_totalprice"
+                android:text="₹540.00"
+                android:layout_marginLeft="50dp"
+                android:layout_marginBottom="3dp"
+                android:textColor="#000000"
+                android:layout_width="wrap_content"
+                android:layout_column="1" />
+
+
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="Amount:"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="3dp"
+                android:textColor="#000000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1" />
+            <TextView
+                android:id="@+id/pro_amount"
+                android:text="₹100.00"
+                android:layout_marginLeft="50dp"
+                android:layout_marginBottom="3dp"
+                android:textColor="#000000"
+                android:layout_width="wrap_content"
+                android:layout_column="1" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="Postage:"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="3dp"
+                android:textColor="#000000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1" />
+            <TextView
+                android:text="₹100.00"
+                android:layout_marginLeft="50dp"
+                android:layout_marginBottom="3dp"
+                android:textColor="#000000"
+                android:layout_width="wrap_content"
+                android:layout_column="1" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="Tax:"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="3dp"
+                android:textColor="#000000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1" />
+            <TextView
+                android:text="₹40.00"
+                android:layout_marginLeft="50dp"
+                android:layout_marginBottom="3dp"
+                android:textColor="#000000"
+                android:layout_width="wrap_content"
+                android:layout_column="1" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="Total:"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="3dp"
+                android:textColor="#000000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1" />
+            <TextView
+                android:id="@+id/billingtotal"
+                android:text="₹680.00"
+                android:layout_marginLeft="50dp"
+                android:layout_marginBottom="3dp"
+                android:textColor="#000000"
+                android:layout_width="wrap_content"
+                android:layout_column="1" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:text="Payment Mode:"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="3dp"
+                android:textColor="#000000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1" />
+            <TextView
+                android:id="@+id/ship_paymentmode"
+                android:text="₹680.00"
+                android:layout_marginLeft="50dp"
+                android:layout_marginBottom="3dp"
+                android:textColor="#000000"
+                android:layout_width="wrap_content"
+                android:layout_column="1" />
+        </TableRow>
+
+
+
+    </TableLayout>
+
+
+    </RelativeLayout>
+
+</ScrollView>

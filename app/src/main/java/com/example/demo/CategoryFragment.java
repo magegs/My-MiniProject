@@ -37,7 +37,7 @@ import Adapter.SearchAdapter;
 import Model.Products;
 import ViewHolder.ProductViewHolder;
 
-public class CategoryFragment extends Fragment {
+public class CategoryFragment extends Fragment{
     Spinner spinner;
     String names[]={"Select Category","VEGETABLE SEED","FLOWER SEED","HYBRID VEGETABLES","LEAFY VEGETABLES","DESI SEEDS","ROOT VEGETABLES","CREEPER VEGETABLES"};
     ArrayAdapter<String> arrayAdapter;
@@ -53,6 +53,7 @@ public class CategoryFragment extends Fragment {
         super.onAttach(context);
         procontext=context;
     }
+
 
     @Nullable
     @Override
@@ -112,6 +113,7 @@ public class CategoryFragment extends Fragment {
 
     }
 
+
     private void search(String procat)
     {
 
@@ -152,6 +154,7 @@ public class CategoryFragment extends Fragment {
             protected void onBindViewHolder(@NonNull ProductViewHolder productViewHolder, int i, @NonNull final Products products)
             {
                 productViewHolder.dispproname.setText(products.getProduct_Name());
+
 
                 productViewHolder.disproprice.setText("₹"+products.getProduct_price()+"");
 

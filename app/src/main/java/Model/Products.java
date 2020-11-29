@@ -2,14 +2,14 @@ package Model;
 
 public class Products
 {
-    private String Product_Descrpition,Category,Product_Specs1,Product_Specs2,Product_Specs3,Product_Specs4,Product_Name,Product_price,date,product_Image,product_id,time;
+    private String Product_Descrpition,Category,Product_Specs1,Product_Specs2,Product_Specs3,Product_Specs4,Product_Name,Product_price,date,product_Image,product_id,time,Stock,status;
 
     public Products()
     {
 
     }
 
-    public Products(String product_Descrpition, String category, String product_Specs1, String product_Specs2, String product_Specs3, String product_Specs4, String product_Name, String product_price, String date, String product_Image, String product_id, String time) {
+    public Products(String product_Descrpition, String category, String product_Specs1, String product_Specs2, String product_Specs3, String product_Specs4, String product_Name, String product_price, String date, String product_Image, String product_id, String time, String stock, String status) {
         Product_Descrpition = product_Descrpition;
         Category = category;
         Product_Specs1 = product_Specs1;
@@ -22,6 +22,8 @@ public class Products
         this.product_Image = product_Image;
         this.product_id = product_id;
         this.time = time;
+        Stock = stock;
+        this.status = status;
     }
 
     public String getProduct_Descrpition() {
@@ -118,5 +120,21 @@ public class Products
 
     public void setTime(String time) {
         this.time = time;
+    }
+
+    public String getStock() {
+        return Stock;
+    }
+
+    public void setStock(String stock) {
+        Stock = stock;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

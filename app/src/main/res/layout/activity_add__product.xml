@@ -134,7 +134,7 @@
             android:padding="15dp"
             android:background="#e6e6e6"
             android:layout_marginTop = "15dp"
-
+            android:inputType="number"
             android:focusable = "true"
             android:layout_alignParentLeft = "true"
             android:layout_alignParentStart = "true"
@@ -167,7 +167,6 @@
             android:padding="15dp"
             android:background="#e6e6e6"
             android:layout_marginTop = "15dp"
-
             android:focusable = "true"
             android:layout_alignParentLeft = "true"
             android:layout_alignParentStart = "true"
@@ -184,6 +183,22 @@
             android:background="#e6e6e6"
             android:layout_marginTop = "15dp"
 
+            android:focusable = "true"
+            android:layout_alignParentLeft = "true"
+            android:layout_alignParentStart = "true"
+            android:layout_alignParentRight = "true"
+            android:layout_alignParentEnd = "true"/>
+        <EditText
+            android:layout_width = "match_parent"
+            android:layout_height = "wrap_content"
+            android:layout_marginRight="25dp"
+            android:layout_marginLeft="25dp"
+            android:id="@+id/edtitext_stock"
+            android:hint="Stock..."
+            android:padding="15dp"
+            android:background="#e6e6e6"
+            android:layout_marginTop = "15dp"
+            android:inputType="number"
             android:focusable = "true"
             android:layout_alignParentLeft = "true"
             android:layout_alignParentStart = "true"

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UpdateProductDetails">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/updatepro"
+        android:layout_width="375dp"
+        android:layout_height="180dp"
+        app:cardCornerRadius="4dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="10dp"
+
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/update_productimage"
+            android:layout_width="125dp"
+            android:layout_height="180dp"
+            android:scaleType="centerCrop"
+            android:background="@drawable/load"/>
+        <RelativeLayout
+            android:layout_width="250dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_alignParentEnd="true">
+            <TextView
+                android:id="@+id/update_proname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="8dp"
+                android:text="Prodct Name"
+                android:layout_marginTop="5dp"
+                android:textColor="#000"
+                />
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/update_proname"
+                android:layout_marginLeft="8dp"
+                android:layout_alignParentStart="true"
+                android:text="₹"
+                android:layout_marginTop="5dp"
+                android:textColor="#000"
+                />
+
+            <TextView
+                android:id="@+id/update_price"
+                android:layout_width="229dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/update_proname"
+                android:layout_alignParentEnd="true"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="5dp"
+                android:text="price"
+                android:textColor="#000" />
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_alignParentStart="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/update_price"
+                android:layout_marginLeft="8dp"
+                android:text="Stock:"
+                android:textColor="#000"
+                />
+
+            <TextView
+                android:layout_marginTop="5dp"
+                android:id="@+id/update_stock"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/update_price"
+                android:layout_alignParentEnd="true"
+                android:layout_marginLeft="8dp"
+                android:text="0"
+                android:textColor="#000"
+                />
+
+            <Button
+                android:layout_width="125dp"
+                android:id="@+id/pro_block"
+                android:text="Block"
+                android:layout_height="wrap_content"
+                android:background="#ff704d"
+                android:textColor="#000"
+                android:layout_alignParentBottom="true"/>
+            <Button
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/pro_delete"
+                android:text="Delete"
+                android:textColor="#000"
+                android:background="#ffe066"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"/>
+        </RelativeLayout>
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+   <TableLayout
+       android:id="@+id/updatelayout"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_below="@id/updatepro"
+
+       android:layout_margin="15dp"
+      >
+       <TableRow>
+           <TextView
+               android:text="Update Stock"
+               android:textStyle="bold"
+               android:textColor="#000000"
+               android:textSize="20dp"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_column="1" />
+
+           <EditText
+               android:id="@+id/edit_stock"
+               android:hint="Stock..."
+               android:padding="15dp"
+               android:textColor="#000000"
+               android:inputType="number"
+               android:layout_marginLeft="15dp"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content" />
+           <Button
+               android:id="@+id/updatestock_btn"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Update"
+               />
+       </TableRow>
+       <TableRow
+           android:layout_marginTop="15dp">
+           <TextView
+               android:text="Update price"
+               android:textStyle="bold"
+               android:textColor="#000000"
+               android:textSize="20dp"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_column="1" />
+
+           <EditText
+               android:id="@+id/edit_price"
+               android:hint="price..."
+               android:padding="15dp"
+               android:textColor="#000000"
+               android:inputType="number"
+               android:layout_marginLeft="15dp"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content" />
+           <Button
+               android:id="@+id/updateprice_btn"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Update"
+               />
+       </TableRow>
+
+
+   </TableLayout>
+
+
+</RelativeLayout>

@@ -1,51 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:id="@+id/app_bar_cart"
-        android:icon="@drawable/menu_cart"
-        android:title="cart"
-        app:showAsAction="always" />
+  <item
+      android:id="@+id/app_bar_cart"
+      android:icon="@drawable/menu_cart"
+      android:title="cart"
+      app:showAsAction="always" />
 
-    <item android:title="General">
-        <menu>
-            <item
-                android:id="@+id/nav_home"
-                android:icon="@drawable/home"
-                android:title="Home" />
-            <item
-                android:id="@+id/categoery"
-                android:icon="@drawable/category"
-                android:title="Categeory" />
-            <item
-                android:id="@+id/yourorders"
-                android:icon="@drawable/order2"
-                android:title="Your Orders" />
-            <item
-                android:id="@+id/track_order"
-                android:icon="@drawable/track"
-                android:title="Track orders" />
-            <item
-                android:id="@+id/Reward"
-                android:icon="@drawable/reward"
-                android:title="Rewards" />
-        </menu>
-    </item>
+  <item android:title="General">
+    <menu>
+      <item
+          android:id="@+id/nav_home"
+          android:icon="@drawable/home"
+          android:title="Home" />
+      <item
+          android:id="@+id/categoery"
+          android:icon="@drawable/category"
+          android:title="Categeory" />
+      <item
+          android:id="@+id/yourorders"
+          android:icon="@drawable/order2"
+          android:title="Your Orders" />
+      <item
+          android:id="@+id/track_order"
+          android:icon="@drawable/track"
+          android:title="Track orders" />
+      <item
+          android:id="@+id/complete_order"
+          android:icon="@drawable/track"
+          android:title="Orders History" />
 
-    <item android:title="Setting">
-        <menu>
-            <item
-                android:id="@+id/nav_profile"
-                android:icon="@drawable/user3"
-                android:title="Profile" />
+    </menu>
+  </item>
+
+  <item android:title="Setting">
+    <menu>
+      <item
+          android:id="@+id/nav_profile"
+          android:icon="@drawable/user3"
+          android:title="Profile" />
 
 
 
-            <item
-                android:id="@+id/logout"
-                android:icon="@drawable/logout"
-                android:title="Logout" />
-        </menu>
-    </item>
+      <item
+          android:id="@+id/logout"
+          android:icon="@drawable/logout"
+          android:title="Logout" />
+    </menu>
+  </item>
 
 </menu>

@@ -12,13 +12,21 @@ import com.example.demo.R;
 import Report.User_Report;
 
 public class Manageuser extends AppCompatActivity {
-    private ImageView viewuser;
+    private ImageView viewuser,userref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manageuser);
         viewuser=(ImageView)findViewById(R.id.viewusers);
+        userref=(ImageView)findViewById(R.id.referenceuser);
+        userref.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Manageuser.this, ViewUserReference.class);
+                startActivity(intent);
+            }
+        });
         viewuser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CompleteOrders">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:textColor="#000"
+            android:textSize="20dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:text="Order has been Delivered on"
+            android:layout_alignParentEnd="true"/>
+        <TextView
+            android:id="@+id/text2"
+            android:layout_below="@+id/text1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:textSize="16dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:text="(10-11-2020)"
+            android:layout_alignParentEnd="true"/>
+        <TableLayout
+            android:id="@+id/tablelayout1"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_below="@id/text2"
+            android:layout_marginTop="10dp">
+            <TableRow>
+                <com.baoyachi.stepview.VerticalStepView
+                    android:id="@+id/stepview"
+                    android:layout_below="@+id/text2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="250dp"
+
+
+                    android:padding="20dp" />
+
+
+            </TableRow>
+
+        </TableLayout>
+        <TextView
+            android:id="@+id/text3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tablelayout1"
+            android:layout_marginTop="15dp"
+            android:text="Shipping Address"
+            android:textColor="#000"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
+        <TableLayout
+            android:id="@+id/tracktable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text3"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/border">
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/shipping_name"
+                    android:text="Magendran"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="3dp"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1" />
+
+
+            </TableRow>
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/shipping_addr1"
+                    android:text="No 3/1 SV flat 2nd floor "
+                    android:layout_marginLeft="5dp"
+                    android:textColor="#000000"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1" />
+
+
+            </TableRow>
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/shipping_addr2"
+                    android:text="Raja Gardern Paper Mills road,Peravallur,chennai-82"
+                    android:layout_marginLeft="5dp"
+                    android:textColor="#000000"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1" />
+
+
+            </TableRow>
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/shipping_state"
+                    android:text="TAMIL NADU"
+                    android:layout_marginLeft="5dp"
+                    android:textColor="#000000"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1" />
+
+
+            </TableRow>
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/shipp_pincode"
+                    android:text="600082"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginBottom="3dp"
+                    android:textColor="#000000"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1" />
+
+
+            </TableRow>
+
+        </TableLayout>
+        <TextView
+            android:id="@+id/text4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tracktable"
+            android:layout_marginTop="15dp"
+            android:text="Billing Details"
+            android:textColor="#000"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
+
+        <TableLayout
+            android:id="@+id/tracktable2"
+            android:layout_below="@+id/text4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/border">
+            <TableRow>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginBottom="3dp"
+                    android:text="Items:"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/ship_totalprice"
+                    android:text="₹540.00"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginBottom="3dp"
+                    android:textColor="#000000"
+                    android:layout_width="wrap_content"
+                    android:layout_column="1" />
+
+
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:text="Postage:"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginBottom="3dp"
+                    android:textColor="#000000"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1" />
+                <TextView
+                    android:text="₹100.00"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginBottom="3dp"
+                    android:textColor="#000000"
+                    android:layout_width="wrap_content"
+                    android:layout_column="1" />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:text="Tax:"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginBottom="3dp"
+                    android:textColor="#000000"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1" />
+                <TextView
+                    android:text="₹40.00"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginBottom="3dp"
+                    android:textColor="#000000"
+                    android:layout_width="wrap_content"
+                    android:layout_column="1" />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:text="Total:"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginBottom="3dp"
+                    android:textColor="#000000"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1" />
+                <TextView
+                    android:id="@+id/billingtotal"
+                    android:text="₹680.00"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginBottom="3dp"
+                    android:textColor="#000000"
+                    android:layout_width="wrap_content"
+                    android:layout_column="1" />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="Payment Mode:"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginBottom="3dp"
+                    android:textColor="#000000"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1" />
+                <TextView
+                    android:id="@+id/ship_paymentmode"
+                    android:text="-"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginBottom="3dp"
+                    android:textColor="#000000"
+                    android:layout_width="wrap_content"
+                    android:layout_column="1" />
+            </TableRow>
+
+
+
+        </TableLayout>
+    </RelativeLayout>
+
+</ScrollView>

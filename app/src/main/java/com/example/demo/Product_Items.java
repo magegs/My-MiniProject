@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ListView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -42,6 +43,7 @@ public class Product_Items extends Fragment {
     EditText searchproname;
     ArrayList<Products>arrayList;
     String savecurrentdate;
+    String status="ACTIVE";
 
 
 
@@ -99,7 +101,8 @@ public class Product_Items extends Fragment {
 
     private void search (String s)
     {
-        Query query=productref.orderByChild("Product_Name").startAt(s).endAt(s+"\uf8ff");
+        final Query query=productref.orderByChild("Product_Name").startAt(s).endAt(s+"\uf8ff");
+
         query.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -107,12 +110,22 @@ public class Product_Items extends Fragment {
                     arrayList.clear();
                     for (DataSnapshot dss:dataSnapshot.getChildren()){
                         final Products products=dss.getValue(Products.class);
+
                         arrayList.add(products);
+
+
+
 
                     }
                     SearchAdapter searchAdapter=new SearchAdapter(procontext,arrayList);
                     recyclerView.setAdapter(searchAdapter);
                     searchAdapter.notifyDataSetChanged();
+
+
+
+
+
+
 
                 }
             }
@@ -128,7 +141,7 @@ public class Product_Items extends Fragment {
     public void onStart() {
         super.onStart();
 
-        FirebaseRecyclerOptions<Products> options=new FirebaseRecyclerOptions.Builder<Products>().setQuery(productref,Products.class).build();
+        FirebaseRecyclerOptions<Products> options=new FirebaseRecyclerOptions.Builder<Products>().setQuery(productref.orderByChild("status").equalTo(status),Products.class).build();
         FirebaseRecyclerAdapter<Products, ProductViewHolder>adapter=new FirebaseRecyclerAdapter<Products, ProductViewHolder>(options) {
             @Override
             protected void onBindViewHolder(@NonNull ProductViewHolder productViewHolder, int i, @NonNull final Products products) {

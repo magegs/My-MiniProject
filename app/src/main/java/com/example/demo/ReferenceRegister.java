@@ -64,6 +64,15 @@ public class ReferenceRegister extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent startmain=new Intent(Intent.ACTION_MAIN);
+        startmain.addCategory(Intent.CATEGORY_HOME);
+        startmain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(startmain);
+    }
+
     private void ValidRefno() {
         String refno = refkey.getText().toString();
         if (TextUtils.isEmpty(refno)) {
@@ -152,9 +161,14 @@ public class ReferenceRegister extends AppCompatActivity {
                 int b = 50;
                 final int pointtablevalue = a + b;
 
+                final String currentfriends=dataSnapshot.child("Total_ref").getValue().toString();
+                int c=Integer.parseInt(currentfriends);
+                int d=1;
+                final int totalref=c+1;
+
 
                 String Bonuscust_id = dataSnapshot.child("cust_id").getValue().toString();
-                UpdateFinal(Bonuscust_id, pointtablevalue);
+                UpdateFinal(Bonuscust_id, pointtablevalue,totalref);
             }
 
             @Override
@@ -166,19 +180,30 @@ public class ReferenceRegister extends AppCompatActivity {
         PointTable.removeEventListener(valueEventListener);
     }
 
-    private void UpdateFinal(String bonuscust_id, int pointtablevalue) {
+    private void UpdateFinal(final String bonuscust_id, int pointtablevalue, final int totalref) {
         final DatabaseReference Updaterefpoint = FirebaseDatabase.getInstance().getReference();
         Updaterefpoint.child("BonusTable").child(bonuscust_id).child("points").setValue(pointtablevalue).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
-                if (task.isSuccessful()) {
-                    Toast.makeText(ReferenceRegister.this, "Register Successful!", Toast.LENGTH_LONG).show();
-                    loadbar.dismiss();
-                    Intent intent = new Intent(ReferenceRegister.this, login.class);
-                    startActivity(intent);
+                if (task.isSuccessful())
+                {
+                    Updaterefpoint.child("BonusTable").child(bonuscust_id).child("Total_ref").setValue(totalref).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task)
+                        {
+                            if(task.isSuccessful()){
+                                Toast.makeText(ReferenceRegister.this, "Register Successful!", Toast.LENGTH_LONG).show();
+                                loadbar.dismiss();
+                                Intent intent = new Intent(ReferenceRegister.this, login.class);
+                                startActivity(intent);
+                            }
+                        }
+                    });
 
 
-                } else {
+
+                }
+                else {
                     Toast.makeText(ReferenceRegister.this, "error Successful!", Toast.LENGTH_LONG).show();
                 }
             }

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViewReferenceDetails">
+    <TextView
+        android:id="@+id/textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+
+        android:text="User Reference Details"
+        android:textSize="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="15dp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/referencerecycle"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/textview"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_height="400dp"/>
+    <TextView
+        android:id="@+id/userreport_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/referencerecycle"
+
+        android:text="Number"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        />
+    <TableLayout
+        android:id="@+id/table_userreport"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/userreport_number"
+        android:layout_marginLeft="10dp"
+
+        android:layout_marginTop="5dp">
+
+        <TableRow>
+
+            <TextView
+                android:text="Refernce_Number"
+                android:textStyle="bold"
+                android:layout_marginLeft="5dp"
+                android:textColor="#000000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1" />
+
+            <TextView
+                android:id="@+id/table_userrefnum"
+                android:text="-"
+                android:textColor="#000000"
+                android:layout_marginLeft="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:text="Points"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginLeft="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1" />
+
+            <TextView
+                android:id="@+id/table_userpoints"
+                android:text="-"
+                android:textColor="#000000"
+                android:layout_marginLeft="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:text="Total_Reference"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginLeft="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1" />
+
+            <TextView
+                android:id="@+id/table_totalref"
+                android:text="-"
+                android:textColor="#000000"
+                android:layout_marginLeft="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </TableRow>
+
+
+    </TableLayout>
+
+</RelativeLayout>

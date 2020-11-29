@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViewOrder">
+    <EditText
+        android:id="@+id/search_ordercart_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#e6e6e6"
+        android:inputType="number"
+        android:hint="Type order_id to Search"
+        android:padding="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop = "15dp"
+        android:drawableRight="@drawable/search2"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/viewordersrecycle"
+        android:layout_below="@+id/search_ordercart_id"
+        android:layout_width="match_parent"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_height="match_parent"/>
+
+</RelativeLayout>

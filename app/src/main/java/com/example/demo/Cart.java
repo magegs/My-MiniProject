@@ -58,6 +58,8 @@ public class Cart extends AppCompatActivity {
     protected void onStart()
     {
         super.onStart();
+        final DatabaseReference cartrefadmin = FirebaseDatabase.getInstance().getReference().child("cart").child("AdminView")
+                .child(Privalent.currentuser.getPhoneno()).child("Products");
         final DatabaseReference cartref = FirebaseDatabase.getInstance().getReference().child("cart").child("UserView")
             .child(Privalent.currentuser.getPhoneno()).child("Products");
         FirebaseRecyclerOptions<CartData> options=new FirebaseRecyclerOptions.Builder<CartData>().setQuery(cartref,CartData.class).build();
@@ -74,15 +76,25 @@ public class Cart extends AppCompatActivity {
                 cartViewHolder.delete_btn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        cartref.child("UserView").child(Privalent.currentuser.getPhoneno()).child("Products").child(cartData.getPid()).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
+                        cartref.child(cartData.getPid()).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task)
                             {
                                 if(task.isSuccessful())
                                 {
-                                    Toast.makeText(Cart.this,"Item Removed",Toast.LENGTH_SHORT).show();
-                                    Intent intent=new Intent(Cart.this,Cart.class);
-                                    startActivity(intent);
+                                    cartrefadmin.child(cartData.getPid()).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                            if(task.isSuccessful())
+                                            {
+                                                Toast.makeText(Cart.this,"Item Removed",Toast.LENGTH_SHORT).show();
+                                                Intent intent=new Intent(Cart.this,Home.class);
+                                                startActivity(intent);
+                                            }
+
+                                        }
+                                    });
+
                                 }
                             }
                         });

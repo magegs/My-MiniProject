@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.NotificationCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
@@ -18,6 +19,8 @@ import ViewHolder.ProductViewHolder;
 import de.hdodenhof.circleimageview.CircleImageView;
 import io.paperdb.Paper;
 
+import android.app.Notification;
+import android.app.NotificationManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -82,6 +85,8 @@ public class Home extends AppCompatActivity  implements NavigationView.OnNavigat
 
     }
 
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
          super.onCreateOptionsMenu(menu);
@@ -117,15 +122,14 @@ public class Home extends AppCompatActivity  implements NavigationView.OnNavigat
                     }
                     if(!dataSnapshot.child("cart").child("UserView")
                             .child(Privalent.currentuser.getPhoneno()).child("Products").exists())
-                {
-                    if (dataSnapshot.child("CartOrders").child(Privalent.currentuser.getPhoneno()).exists())
                     {
-                        Toast.makeText(Home.this,"Cart was Under Processing!",Toast.LENGTH_LONG).show();
-                    }
-                }
-                    else
-                    {
-                        Toast.makeText(Home.this,"Cart was Empty!",Toast.LENGTH_LONG).show();
+                        if (dataSnapshot.child("CartOrders").child(Privalent.currentuser.getPhoneno()).exists())
+                        {
+                            Toast.makeText(Home.this,"Cart was Under Processing!",Toast.LENGTH_LONG).show();
+                        }
+                        else {
+                            Toast.makeText(Home.this,"Cart was Empty!",Toast.LENGTH_LONG).show();
+                        }
                     }
                 }
 
@@ -159,15 +163,67 @@ public class Home extends AppCompatActivity  implements NavigationView.OnNavigat
             Toast.makeText(Home.this,"You tap Categoery!",Toast.LENGTH_LONG).show();
         }
         if(menuItem.getItemId()==R.id.yourorders){
-            Toast.makeText(Home.this,"You tap yourorders!",Toast.LENGTH_LONG).show();
-            Intent intent=new Intent(Home.this,Custbilling.class);
-            startActivity(intent);
+
+            final DatabaseReference custorder=FirebaseDatabase.getInstance().getReference().child("CartOrders")
+                    .child(Privalent.currentuser.getPhoneno());
+            custorder.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot)
+                {
+                    if(dataSnapshot.exists())
+                    {
+                        Intent intent=new Intent(Home.this,PlaceOrder.class);
+                        startActivity(intent);
+                    }
+                    else {
+                        Toast.makeText(Home.this,"No Order been Founded!",Toast.LENGTH_LONG).show();
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
+
         }
         if(menuItem.getItemId()==R.id.logout){
             Paper.book().destroy();
 
             Intent intent=new Intent(Home.this, MainActivity.class);
             startActivity(intent);
+        }
+        if(menuItem.getItemId()==R.id.nav_profile)
+        {
+            Intent intent=new Intent(Home.this, UserPanel.class);
+            startActivity(intent);
+
+        }
+        if(menuItem.getItemId()==R.id.complete_order)
+        {
+            final DatabaseReference orderdata= FirebaseDatabase.getInstance().getReference().child("CompleteOrders").child(Privalent.currentuser.getPhoneno()).child("orders");
+            ValueEventListener valueEventListener=new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot)
+                {
+                    if(dataSnapshot.exists())
+                    {
+                        Intent intent=new Intent(Home.this, UserViewReference.class);
+                        startActivity(intent);
+                    }
+                    else{
+                        Toast.makeText(Home.this, "No Order_History Data Found!", Toast.LENGTH_LONG).show();
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            };
+            orderdata.addListenerForSingleValueEvent(valueEventListener);
+            orderdata.removeEventListener(valueEventListener);
+
         }
         if(menuItem.getItemId()==R.id.app_bar_cart){
             final DatabaseReference cartref = FirebaseDatabase.getInstance().getReference();
@@ -199,11 +255,11 @@ public class Home extends AppCompatActivity  implements NavigationView.OnNavigat
                         {
                             Toast.makeText(Home.this,"Cart was Under Processing!",Toast.LENGTH_LONG).show();
                         }
+                        else {
+                            Toast.makeText(Home.this,"Cart was Empty!",Toast.LENGTH_LONG).show();
+                        }
                     }
-                    else
-                        {
-                        Toast.makeText(Home.this,"Cart was Empty!",Toast.LENGTH_LONG).show();
-                    }
+
 
                 }
 
@@ -218,8 +274,30 @@ public class Home extends AppCompatActivity  implements NavigationView.OnNavigat
 
         }
         if(menuItem.getItemId()==R.id.track_order){
-            Intent intent=new Intent(Home.this, OrderTrack.class);
-            startActivity(intent);
+            final DatabaseReference cartref = FirebaseDatabase.getInstance().getReference().child("CartOrders").child(Privalent.currentuser.getPhoneno());
+            ValueEventListener valueEventListener=new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot)
+                {
+                    if(dataSnapshot.exists())
+                    {   Intent intent=new Intent(Home.this, OrderTrack.class);
+                        startActivity(intent);
+                    }
+                    else {
+                        Toast.makeText(Home.this,"No Orders Found",Toast.LENGTH_LONG).show();
+                    }
+
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            };
+            cartref.addListenerForSingleValueEvent(valueEventListener);
+            cartref.removeEventListener(valueEventListener);
+
+
         }
 
         return true;

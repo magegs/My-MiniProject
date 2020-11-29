@@ -2,7 +2,10 @@ package com.example.demo;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 
+import android.app.Notification;
+import android.app.NotificationManager;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -50,7 +53,7 @@ public class login extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                LoginUser();
+              LoginUser();
             }
         });
         Adminlink.setOnClickListener(new View.OnClickListener() {
@@ -111,7 +114,8 @@ public class login extends AppCompatActivity {
         RootRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if(dataSnapshot.child(parentDbName).child(phoneno).exists()){
+                if(dataSnapshot.child(parentDbName).child(phoneno).exists())
+                {
                     Users userdata=dataSnapshot.child(parentDbName).child(phoneno).getValue(Users.class);
                     if(userdata.getPhoneno().equals(phoneno)){
                         if(userdata.getPassword().equals(password))

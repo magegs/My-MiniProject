@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserPanel">
+    <RelativeLayout
+        android:id="@+id/relativetop"
+        android:layout_width="match_parent"
+        android:layout_height="176dp"
+        android:orientation="vertical"
+        android:paddingLeft="16dp"
+
+        android:paddingRight="16dp"
+        android:paddingBottom="16dp"
+
+        android:background="@color/colorPrimaryDark"
+        >
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/userpanel_image"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_marginLeft="8dp"
+            android:src="@drawable/profile"
+            app:civ_border_width="2dp"
+
+            app:civ_border_color="#FF000000"/>
+        <TextView
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/userpanel_image"
+            android:textAlignment="center"
+            android:id="@+id/userpanel_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="8dp"
+            android:textSize="18sp"
+
+            android:text="Username"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+        <TextView
+            android:layout_centerHorizontal="true"
+            android:textAlignment="center"
+            android:id="@+id/userpanel_phno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/userpanel_username"
+            android:paddingTop="8dp"
+            android:textSize="18sp"
+
+            android:text="8072543321"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/rewardtableview"
+        android:layout_below="@+id/relativetop"
+        android:text="Reward Table"
+        android:textStyle="bold"
+        android:textSize="24dp"
+        android:textColor="#e68a00"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+
+        />
+    <TableLayout
+        android:id="@+id/rewardtable"
+        android:layout_below="@+id/rewardtableview"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_width="match_parent"
+        android:background="@drawable/border2"
+        android:layout_height="wrap_content">
+        <TableRow>
+
+            <TextView
+                android:text="Cash Bonus"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                android:textColor="#000000"
+                android:layout_marginLeft="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1" />
+
+            <TextView
+
+                android:textSize="18dp"
+                android:text=":₹"
+                android:textColor="#000000"
+                android:layout_marginLeft="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/userpanelpoints"
+                android:textSize="18dp"
+                android:text="55"
+                android:textColor="#000000"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:text="Total No.Of Refered Persons"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                android:textColor="#000000"
+                android:layout_marginLeft="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1" />
+
+            <TextView
+
+                android:textSize="18dp"
+                android:text=":"
+                android:textColor="#000000"
+                android:layout_marginLeft="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/total_ref.no"
+                android:textSize="18dp"
+                android:text="55"
+                android:textColor="#000000"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </TableRow>
+
+
+    </TableLayout>
+<!--    <TextView-->
+<!--        android:id="@+id/textviewuserpanel1"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@+id/rewardtable"-->
+<!--        android:layout_marginTop="55dp"-->
+<!--        android:text="INVITE CODE:"-->
+<!--        android:textColor="#000"-->
+<!--        android:textStyle="bold"-->
+<!--        android:layout_marginLeft="15dp"-->
+<!--        android:textSize="18dp"/>-->
+    <TextView
+        android:id="@+id/tableview"
+        android:layout_below="@id/rewardtable"
+        android:text="INVITE CODE"
+        android:textStyle="bold"
+        android:textSize="24dp"
+        android:textColor="#e68a00"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+
+        />
+
+
+
+            <TextView
+                android:id="@+id/refercode"
+                android:layout_below="@+id/tableview"
+                android:textAlignment="center"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/border2"
+                android:padding="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="INVITE CODE:"
+                android:drawableRight="@drawable/copy"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginLeft="15dp"
+                android:textSize="18dp"/>
+
+
+
+
+    <Button
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="15dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp"
+        android:id="@+id/editprofile_btn"
+
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:text="Edit Profile"/>
+
+
+</RelativeLayout>

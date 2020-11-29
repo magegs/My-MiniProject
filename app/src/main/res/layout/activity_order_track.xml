@@ -29,7 +29,7 @@
         android:textSize="16dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:text="15/10/2020,Thursday"
+        android:text="10-15 days"
         android:layout_alignParentEnd="true"/>
 
     <com.baoyachi.stepview.VerticalStepView
@@ -41,6 +41,9 @@
         android:layout_marginRight="15dp"
 
         android:padding="20dp" />
+        
+
+
    <TextView
        android:id="@+id/text3"
        android:layout_width="match_parent"
@@ -65,6 +68,7 @@
         <TableRow>
 
             <TextView
+                android:id="@+id/shipping_name"
                 android:text="Magendran"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="3dp"
@@ -79,6 +83,7 @@
         <TableRow>
 
             <TextView
+                android:id="@+id/shipping_addr1"
                 android:text="No 3/1 SV flat 2nd floor "
                 android:layout_marginLeft="5dp"
                 android:textColor="#000000"
@@ -91,6 +96,7 @@
         <TableRow>
 
             <TextView
+                android:id="@+id/shipping_addr2"
                 android:text="Raja Gardern Paper Mills road,Peravallur,chennai-82"
                 android:layout_marginLeft="5dp"
                 android:textColor="#000000"
@@ -103,6 +109,7 @@
         <TableRow>
 
             <TextView
+                android:id="@+id/shipping_state"
                 android:text="TAMIL NADU"
                 android:layout_marginLeft="5dp"
                 android:textColor="#000000"
@@ -115,6 +122,7 @@
         <TableRow>
 
             <TextView
+                android:id="@+id/shipp_pincode"
                 android:text="600082"
                 android:layout_marginLeft="5dp"
                 android:layout_marginBottom="3dp"
@@ -160,8 +168,9 @@
                 android:layout_height="wrap_content"
                 android:layout_column="1" />
             <TextView
+                android:id="@+id/ship_totalprice"
                 android:text="₹540.00"
-                android:layout_marginLeft="200dp"
+                android:layout_marginLeft="50dp"
                 android:layout_marginBottom="3dp"
                 android:textColor="#000000"
                 android:layout_width="wrap_content"
@@ -180,7 +189,7 @@
                 android:layout_column="1" />
             <TextView
                 android:text="₹100.00"
-                android:layout_marginLeft="200dp"
+                android:layout_marginLeft="50dp"
                 android:layout_marginBottom="3dp"
                 android:textColor="#000000"
                 android:layout_width="wrap_content"
@@ -197,7 +206,7 @@
                 android:layout_column="1" />
             <TextView
                 android:text="₹40.00"
-                android:layout_marginLeft="200dp"
+                android:layout_marginLeft="50dp"
                 android:layout_marginBottom="3dp"
                 android:textColor="#000000"
                 android:layout_width="wrap_content"
@@ -213,8 +222,28 @@
                 android:layout_height="wrap_content"
                 android:layout_column="1" />
             <TextView
+                android:id="@+id/billingtotal"
                 android:text="₹680.00"
-                android:layout_marginLeft="200dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginBottom="3dp"
+                android:textColor="#000000"
+                android:layout_width="wrap_content"
+                android:layout_column="1" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:text="Payment Mode:"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="3dp"
+                android:textColor="#000000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1" />
+            <TextView
+                android:id="@+id/ship_paymentmode"
+                android:text="₹680.00"
+                android:layout_marginLeft="50dp"
                 android:layout_marginBottom="3dp"
                 android:textColor="#000000"
                 android:layout_width="wrap_content"

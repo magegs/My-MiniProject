@@ -36,13 +36,15 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
 
+import Model.Products;
+
 public class Add_Product extends AppCompatActivity {
-    private  String procat,prodesc,proname,proprice,savecurrentdate,savecurrenttime,prospec1,prospec2,prospec3,prospec4;
+    private  String procat,prodesc,proname,proprice,savecurrentdate,savecurrenttime,prospec1,prospec2,prospec3,prospec4,prostock,status;
     Spinner spinner;
     String names[]={"Select Category","VEGETABLE SEED","FLOWER SEED","HYBRID VEGETABLES","LEAFY VEGETABLES","DESI SEEDS","ROOT VEGETABLES","CREEPER VEGETABLES"};
     ArrayAdapter<String>arrayAdapter;
     private Button btn_addpro;
-    private EditText pro_name,pro_price,pro_desc,spec1,spec2,spec3,spec4;
+    private EditText pro_name,pro_price,pro_desc,spec1,spec2,spec3,spec4,stock;
     private ImageView pro_image;
     private static final int GalleryPick=1;
     private Uri imageuri;
@@ -52,7 +54,7 @@ public class Add_Product extends AppCompatActivity {
     private ProgressDialog loadbar;
     private String currentyear,newrefkey;
     int maxid=0;
-
+    Products products;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,6 +69,7 @@ public class Add_Product extends AppCompatActivity {
         spec2=(EditText)findViewById(R.id.edtitext_product_spec2);
         spec3=(EditText)findViewById(R.id.edtitext_product_spec3);
         spec4=(EditText)findViewById(R.id.edtitext_product_spec4);
+        stock=(EditText)findViewById(R.id.edtitext_stock);
         pro_image=(ImageView)findViewById(R.id.addproimage);
         productref= FirebaseDatabase.getInstance().getReference().child("Products");
 
@@ -112,8 +115,8 @@ public class Add_Product extends AppCompatActivity {
         prospec2=spec2.getText().toString();
         prospec3=spec3.getText().toString();
         prospec4=spec4.getText().toString();
-
-
+        prostock=stock.getText().toString();
+        status="ACTIVE";
 
         if(imageuri==null){
             Toast.makeText(this,"Products Image is Mandatory..!",Toast.LENGTH_SHORT).show();
@@ -137,6 +140,9 @@ public class Add_Product extends AppCompatActivity {
             Toast.makeText(this,"please fill all the Mandatory..!",Toast.LENGTH_SHORT).show();
         }
         else if(TextUtils.isEmpty(prospec4)){
+            Toast.makeText(this,"please fill all the Mandatory..!",Toast.LENGTH_SHORT).show();
+        }
+        else if(TextUtils.isEmpty(prostock)){
             Toast.makeText(this,"please fill all the Mandatory..!",Toast.LENGTH_SHORT).show();
         }
 
@@ -240,7 +246,8 @@ public class Add_Product extends AppCompatActivity {
         productMap.put("Product_Specs2",prospec2);
         productMap.put("Product_Specs3",prospec3);
         productMap.put("Product_Specs4",prospec4);
-
+        productMap.put("Stock",prostock);
+        productMap.put("status",status);
 
         productref.child(productkey).updateChildren(productMap).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override

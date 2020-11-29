@@ -312,6 +312,7 @@ public class register extends AppCompatActivity {
                 Intent intent=new Intent(register.this,ReferenceRegister.class);
                 intent.putExtra("cust_phno",phno);
                 startActivity(intent);
+                Toast.makeText(getApplicationContext(),"Register Success",Toast.LENGTH_LONG).show();
             }
         });
     }
